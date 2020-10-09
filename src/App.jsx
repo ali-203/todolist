@@ -2,13 +2,16 @@ import React, { useState } from "react";
 
 
 const App = () => {
-const [inpuList, setInputList] = useState("buy Apple");
+const [inpuList, setInputList] = useState("");
+
 
 const itemEvent = (event) => {
 setInputList(event.target.value);
 
 };
-const listOfItems = ()
+const listOfItems = () => {
+
+}
 
     return (
 <>
