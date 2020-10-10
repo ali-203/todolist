@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import ToDoList from "./ToDoList";
 
 const App = () => {
 const [inpuList, setInputList] = useState("");
@@ -32,15 +32,12 @@ return [...oldItems, inpuList];
     <button onClick={listOfItems}> + </button>
     <ol>
         {Items.map((itemval) => {
-            return <li> {itemval}  </li>;
+            return <ToDoList text={itemval} />;
         })}
     </ol>
 
     </div>
 </div>
-
-
-
 
 </>
     );
