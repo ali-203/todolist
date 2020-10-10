@@ -18,6 +18,15 @@ return [...oldItems, inpuList];
 
 };
 
+const deleteItems = (id) => {
+    console.log("deleted");
+    setItems((oldItems) => {
+        return oldItems.filter((arrEle, index) => {
+            return index !== id;
+        });
+    });
+};
+
     return (
 <>
 
@@ -31,8 +40,18 @@ return [...oldItems, inpuList];
      onChange={itemEvent} />
     <button onClick={listOfItems}> + </button>
     <ol>
-        {Items.map((itemval) => {
-            return <ToDoList text={itemval} />;
+        {Items.map((itemval, index) => {
+            return (
+                 <ToDoList
+            key={index}
+            id={index}
+             text={itemval}
+             onSelect={deleteItems} 
+
+             />
+
+             
+        );
         })}
     </ol>
 
